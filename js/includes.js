@@ -77,7 +77,7 @@
     libs.push('js/custom.js'); // shared behaviour — must run after the libs above
 
     return loadInOrder(libs).then(function () {
-      var extra = [];
+      var extra = ['js/enhance.js'];                // premium micro-interactions
       if (document.querySelector('form[data-validate]')) extra.push('js/forms.js');
       if (document.querySelector('#cart-modal')) extra.push('js/cart.js');
       return Promise.all(extra.map(loadScript));

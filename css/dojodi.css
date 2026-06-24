@@ -668,3 +668,46 @@ textarea:focus-visible, .btn:focus-visible, .nav-link:focus-visible,
   .front-product .px-5 { padding-left: var(--space-5) !important; padding-right: var(--space-5) !important; }
   .social-login, .div-separator { width: 100% !important; }
 }
+
+/* ==========================================================================
+   PREMIUM MICRO-INTERACTIONS — hero motion, marquee, cursor
+   ========================================================================== */
+.hero { position: relative; }
+
+/* Ken Burns slow zoom on the active hero slide */
+.slick-slideshow .slick-current img { animation: kenburns 8s ease-out both; }
+@keyframes kenburns { from { transform: scale(1.001); } to { transform: scale(1.09); } }
+
+/* Cursor glow that follows the pointer over the hero */
+.hero-cursor {
+  position: absolute; top: 0; left: 0; width: 380px; height: 380px;
+  margin: -190px 0 0 -190px; border-radius: 50%; z-index: 2;
+  pointer-events: none; opacity: 0; transition: opacity 0.4s ease;
+  background: radial-gradient(circle, rgba(216,178,74,0.20), rgba(216,178,74,0) 62%);
+  mix-blend-mode: screen;
+}
+
+/* Scroll cue */
+.slick-slideshow .slick-dots { bottom: var(--space-7); }
+.scroll-cue {
+  position: absolute; bottom: var(--space-3); left: 50%; transform: translateX(-50%);
+  z-index: 3; color: var(--cream); font-size: 1.4rem; line-height: 1;
+  opacity: 0.85; animation: cueBounce 2.2s ease-in-out infinite;
+  text-shadow: 0 1px 12px rgba(0,0,0,0.4);
+}
+.scroll-cue:hover { color: var(--gold-warm); }
+@keyframes cueBounce { 0%, 100% { transform: translate(-50%, 0); } 50% { transform: translate(-50%, 9px); } }
+
+/* Press / partners marquee */
+.marquee { overflow: hidden; background: var(--canvas); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); padding: var(--space-6) 0; }
+.marquee-track { display: flex; align-items: center; gap: var(--space-7); width: max-content; animation: marquee 38s linear infinite; }
+.marquee:hover .marquee-track { animation-play-state: paused; }
+.marquee-item { font-family: var(--font-display); font-style: italic; font-size: 1.45rem; color: var(--muted); white-space: nowrap; }
+.marquee-sep { color: var(--gold); font-size: 0.8rem; }
+@keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+@media (prefers-reduced-motion: reduce) {
+  .slick-slideshow .slick-current img { animation: none; }
+  .scroll-cue { animation: none; }
+  .marquee-track { animation: none; }
+}
