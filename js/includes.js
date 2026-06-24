@@ -67,21 +67,16 @@
     }, Promise.resolve());
   }
 
-  /* 4c. Decide which scripts this page needs, then load them. */
+  /* 4c. Decide which scripts this page needs, then load them in order. */
   function loadPageScripts() {
-    var core = [
-      'js/jquery.min.js',
-      'js/bootstrap.bundle.min.js',
-      'js/Headroom.js',
-      'js/jQuery.headroom.js'
-    ];
-    // Slick is heavy and only the home + story pages use a carousel.
-    if (document.querySelector('.slick-slideshow, .slick-testimonial')) {
-      core.push('js/slick.min.js');
-    }
-    core.push('js/custom.js'); // shared behaviour — must run after the libs above
+    // Bootstrap is needed everywhere; jQuery + Slick only where a carousel is.
+    var hasCarousel = document.querySelector('.slick-slideshow, .slick-testimonial');
+    var libs = hasCarousel
+      ? ['js/jquery.min.js', 'js/bootstrap.bundle.min.js', 'js/slick.min.js']
+      : ['js/bootstrap.bundle.min.js'];
+    libs.push('js/custom.js'); // shared behaviour — must run after the libs above
 
-    return loadInOrder(core).then(function () {
+    return loadInOrder(libs).then(function () {
       var extra = [];
       if (document.querySelector('form[data-validate]')) extra.push('js/forms.js');
       if (document.querySelector('#cart-modal')) extra.push('js/cart.js');

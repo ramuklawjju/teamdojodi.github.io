@@ -1,38 +1,33 @@
 /*
  * custom.js — shared page behaviour for DoJodi.
- * Loaded last by includes.js, after jQuery, Bootstrap, Headroom and (where
- * needed) Slick are available and the shared partials have been injected.
+ * Loaded last by includes.js, after the shared partials are injected and the
+ * required libraries (Bootstrap everywhere; jQuery + Slick on carousel pages)
+ * are available.
  */
 (function () {
   'use strict';
 
-  /* Preloader -------------------------------------------------------------
-   * Fade out the loading overlay once the page is ready. Because this file is
-   * injected dynamically, the window 'load' event may have already fired — so
-   * if the document is complete we hide it immediately instead of waiting. */
-  function hidePreloader() {
-    var pre = document.querySelector('.preloader');
-    if (!pre) return;
-    pre.style.transition = 'opacity 0.4s ease';
-    pre.style.opacity = '0';
-    setTimeout(function () { pre.style.display = 'none'; }, 400);
-  }
-  if (document.readyState === 'complete') {
-    hidePreloader();
-  } else {
-    window.addEventListener('load', hidePreloader);
-  }
+  var prefersReduced = window.matchMedia &&
+    window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  /* Navbar scroll behaviour ----------------------------------------------
-   * Headroom hides the fixed navbar when scrolling down and reveals it when
-   * scrolling back up, so it never covers content while reading. */
+  /* Navbar ----------------------------------------------------------------
+   * On the home page the navbar floats transparently over the hero and turns
+   * solid once you scroll past it. Inner pages just gain a subtle shadow. */
   var navbar = document.querySelector('.navbar');
-  if (navbar && window.jQuery && window.jQuery.fn.headroom) {
-    window.jQuery(navbar).headroom();
+  if (navbar) {
+    var hero = document.querySelector('.slick-slideshow');
+    var transparent = !!hero;
+    if (transparent) navbar.classList.add('navbar--transparent');
+
+    // Solidify the navbar early so cream-on-image text never loses contrast.
+    var onScroll = function () {
+      navbar.classList.toggle('is-scrolled', window.scrollY > 60);
+    };
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
   }
 
-  /* Mobile menu ----------------------------------------------------------
-   * Collapse the expanded mobile menu after a link is tapped. */
+  /* Mobile menu: collapse it after a link is tapped. */
   document.querySelectorAll('.navbar-collapse a').forEach(function (link) {
     link.addEventListener('click', function () {
       var open = document.querySelector('.navbar-collapse.show');
@@ -42,9 +37,7 @@
     });
   });
 
-  /* Favourite toggle -----------------------------------------------------
-   * Demo-only "save to favourites" heart on service cards: toggles the filled
-   * state and keeps aria-pressed in sync for assistive tech. */
+  /* Favourite toggle (demo) on service cards. */
   document.querySelectorAll('.product-icon').forEach(function (btn) {
     btn.setAttribute('aria-pressed', 'false');
     btn.addEventListener('click', function (e) {
@@ -56,30 +49,66 @@
     });
   });
 
-  /* Carousels ------------------------------------------------------------
-   * Slick powers the hero slideshow (home) and the testimonial slider
-   * (story). It requires jQuery, which is only loaded on those two pages. */
+  /* Carousels (Slick — only present on home + story). */
   if (window.jQuery && window.jQuery.fn.slick) {
     var $ = window.jQuery;
     if ($('.slick-slideshow').length) {
       $('.slick-slideshow').slick({
-        autoplay: true,
-        autoplaySpeed: 5000,
-        infinite: true,
-        arrows: false,
-        fade: true,
-        dots: true,
-        pauseOnHover: true
+        autoplay: true, autoplaySpeed: 5500, speed: 900,
+        infinite: true, arrows: false, fade: true, dots: true, pauseOnHover: true
       });
     }
     if ($('.slick-testimonial').length) {
       $('.slick-testimonial').slick({
-        autoplay: true,
-        autoplaySpeed: 6000,
-        arrows: false,
-        dots: true,
-        adaptiveHeight: true
+        autoplay: true, autoplaySpeed: 6500, speed: 700,
+        arrows: false, dots: true, adaptiveHeight: true
       });
     }
   }
+
+  /* Scroll reveal --------------------------------------------------------
+   * Fade-and-rise content as it enters the viewport. Skipped entirely when
+   * the user prefers reduced motion or IntersectionObserver is unavailable. */
+  if (!prefersReduced && 'IntersectionObserver' in window) {
+    var groups = [
+      ['.site-header h1', false], ['.site-header .lead', false],
+      ['main h2:not(.slick-title)', false], ['.section-padding .lead', false],
+      ['.front-product .row > div', true], ['.product-thumb', true],
+      ['.team-thumb', true], ['.stat', true], ['.about .tab-content', false],
+      ['.skill-thumb', false], ['.faq .accordion', false], ['.faq .lead', false],
+      ['.contact-form', false], ['.contact-info .row > div', true],
+      ['.product-detail .row > div', true], ['.product-includes', false],
+      ['.demo-note', false]
+    ];
+    groups.forEach(function (g) {
+      document.querySelectorAll(g[0]).forEach(function (el, i) {
+        el.setAttribute('data-reveal', '');
+        if (g[1]) el.style.transitionDelay = (i % 3) * 0.09 + 's';
+      });
+    });
+
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -6% 0px' });
+
+    document.querySelectorAll('[data-reveal]').forEach(function (el) { io.observe(el); });
+  }
+
+  /* Preloader: fade out once everything is ready (run last so the reveal
+   * state is set before the page is revealed). Because this script is injected
+   * dynamically the load event may have fired already, so hide immediately. */
+  function hidePreloader() {
+    var pre = document.querySelector('.preloader');
+    if (!pre) return;
+    pre.style.transition = 'opacity 0.5s ease';
+    pre.style.opacity = '0';
+    setTimeout(function () { pre.style.display = 'none'; }, 500);
+  }
+  if (document.readyState === 'complete') hidePreloader();
+  else window.addEventListener('load', hidePreloader);
 })();
