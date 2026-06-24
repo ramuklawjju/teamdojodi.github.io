@@ -47,7 +47,7 @@ It's a static site: push to the default branch and enable **GitHub Pages**
 
 ## What's intentionally placeholder
 
-- Photography is royalty-free stock; team members and testimonials are illustrative.
+- Photos are royalty-free — [Unsplash](https://unsplash.com/license) & [Pexels](https://www.pexels.com/license/); team headshots and client avatars are from [randomuser.me](https://randomuser.me/). Names, bios and testimonials are illustrative.
 - Forms validate fully but have **no backend** — a valid submit shows a confirmation
   message instead of sending data.
 - Service cards all open the same sample `product-detail.html` and are marked **“Demo.”**
