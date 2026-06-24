@@ -64,4 +64,20 @@
     });
     hero.addEventListener('pointerleave', function () { glow.style.opacity = '0'; });
   }
+
+  /* Split-type hero headline -------------------------------------------- */
+  /* Wrap each word so it can rise into view; the CSS animates the words of
+   * whichever slide is current. Only when motion is allowed (otherwise the
+   * words must stay visible). */
+  var heroTitles = document.querySelectorAll('.slick-slideshow .slick-title');
+  if (heroTitles.length && !reduce) {
+    var show = document.querySelector('.slick-slideshow');
+    if (show) show.classList.add('hero-split');
+    heroTitles.forEach(function (t) {
+      var words = t.textContent.trim().split(/\s+/);
+      t.innerHTML = words.map(function (w) {
+        return '<span class="hw"><span>' + w + '</span></span>';
+      }).join(' ');
+    });
+  }
 })();

@@ -80,6 +80,7 @@
       var extra = ['js/enhance.js'];                // premium micro-interactions
       if (document.querySelector('form[data-validate]')) extra.push('js/forms.js');
       if (document.querySelector('#cart-modal')) extra.push('js/cart.js');
+      if (document.querySelector('[data-lightbox]')) extra.push('js/lightbox.js');
       return Promise.all(extra.map(loadScript));
     });
   }
