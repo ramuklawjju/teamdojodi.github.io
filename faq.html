@@ -1,257 +1,164 @@
 <!doctype html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Answers to common questions about working with DoJodi Events — what we do, the events we take on, how far ahead to book, and how our pricing works.">
+    <meta name="author" content="DoJodi Events">
+    <meta name="theme-color" content="#5100ff">
 
-        <meta name="description" content="">
-        <meta name="author" content="">
+    <title>Frequently Asked Questions — DoJodi Events</title>
 
-        <title>DoJodi's DoJodi - FAQs Page</title>
+    <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2032%2032'%3E%3Crect%20width='32'%20height='32'%20rx='7'%20fill='%235100ff'/%3E%3Ctext%20x='16'%20y='22'%20font-family='Arial,sans-serif'%20font-size='18'%20font-weight='bold'%20fill='%23fff'%20text-anchor='middle'%3ED%3C/text%3E%3C/svg%3E">
 
-        <!-- CSS FILES -->
-        <link rel="preconnect" href="https://fonts.googleapis.com">
+    <!-- CSS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;300;400;700;900&display=swap" rel="stylesheet">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap-icons.css" rel="stylesheet">
+    <link href="css/dojodi.css" rel="stylesheet">
+  </head>
 
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
 
-        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;300;400;700;900&display=swap" rel="stylesheet">
+    <div class="preloader" role="status" aria-live="polite">
+      <span class="visually-hidden">Loading…</span>
+      <div class="spinner"><span class="sk-inner-circle"></span></div>
+    </div>
+    <div data-include="navbar"></div>
 
-        <link href="css/bootstrap.min.css" rel="stylesheet">
-        <link href="css/bootstrap-icons.css" rel="stylesheet">
-
-        <link rel="stylesheet" href="css/slick.css"/>
-
-        <link href="css/dojodi.css" rel="stylesheet">
-        
-    </head>
-    
-    <body>
-
-        <section class="preloader">
-            <div class="spinner">
-                <span class="sk-inner-circle"></span>
+    <main id="main">
+      <header class="site-header section-padding d-flex justify-content-center align-items-center">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-10 col-12">
+              <h1>
+                <span class="d-block text-primary">Questions, answered</span>
+                <span class="d-block text-dark">before you even ask</span>
+              </h1>
             </div>
-        </section>
-    
-        <main>
+          </div>
+        </div>
+      </header>
 
-            <nav class="navbar navbar-expand-lg">
-                <div class="container">
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
+      <section class="faq section-padding">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-8 col-12">
+              <h2>General</h2>
+
+              <div class="accordion" id="accordionGeneral">
+                <div class="accordion-item">
+                  <h3 class="accordion-header" id="generalOneHeading">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#generalOne" aria-expanded="true" aria-controls="generalOne">
+                      What does DoJodi actually do?
                     </button>
-
-                    <a class="navbar-brand" href="index.html">
-                        <strong><span>Do</span>Jodi</strong>
-                    </a>
-
-                    <div class="d-lg-none">
-                        <a href="sign-in.html" class="bi-person custom-icon me-3"></a>
-
-                        <a href="product-detail.html" class="bi-bag custom-icon"></a>
+                  </h3>
+                  <div id="generalOne" class="accordion-collapse collapse show" aria-labelledby="generalOneHeading" data-bs-parent="#accordionGeneral">
+                    <div class="accordion-body">
+                      <p class="large-paragraph">We are a full-service event and wedding planning studio. That means we can take an event from a first idea all the way to teardown — design, budgeting, suppliers, timelines and on-the-day coordination — or step in for just the parts you need help with.</p>
+                      <p class="large-paragraph">Whichever way you work with us, you get one dedicated planner as your single point of contact.</p>
                     </div>
-
-                    <div class="collapse navbar-collapse" id="navbarNav">
-                        <ul class="navbar-nav mx-auto">
-                            <li class="nav-item">
-                                <a class="nav-link" href="index.html">Home</a>
-                            </li>
-
-                            <li class="nav-item">
-                                <a class="nav-link" href="about.html">Story</a>
-                            </li>
-
-                            <li class="nav-item">
-                                <a class="nav-link" href="products.html">Products</a>
-                            </li>
-
-                            <li class="nav-item">
-                                <a class="nav-link active" href="faq.html">FAQs</a>
-                            </li>
-
-                            <li class="nav-item">
-                                <a class="nav-link" href="contact.html">Contact</a>
-                            </li>
-                        </ul>
-
-                        <div class="d-none d-lg-block">
-                            <a href="sign-in.html" class="bi-person custom-icon me-3"></a>
-
-                            <a href="product-detail.html" class="bi-bag custom-icon"></a>
-                        </div>
-                    </div>
+                  </div>
                 </div>
-            </nav>
 
-            <header class="site-header section-padding d-flex justify-content-center align-items-center">
-                <div class="container">
-                    <div class="row">
-
-                        <div class="col-lg-10 col-12">
-                            <h1>
-                                <span class="d-block text-primary">Your favorite questions</span>
-                                <span class="d-block text-dark">and our answers to them</span>
-                            </h1>
-                        </div>
+                <div class="accordion-item">
+                  <h3 class="accordion-header" id="generalTwoHeading">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#generalTwo" aria-expanded="false" aria-controls="generalTwo">
+                      What kinds of events do you take on?
+                    </button>
+                  </h3>
+                  <div id="generalTwo" class="accordion-collapse collapse" aria-labelledby="generalTwoHeading" data-bs-parent="#accordionGeneral">
+                    <div class="accordion-body">
+                      <p class="large-paragraph">Weddings and engagements, milestone birthdays and anniversaries, private parties, and corporate events such as launches, conferences and team celebrations. If it has guests, a budget and a date, we can help — anywhere from 20 to 500+ people.</p>
                     </div>
+                  </div>
                 </div>
-            </header>
 
-            <section class="faq section-padding">
-                <div class="container">
-                    <div class="row">
-                        
-                        <div class="col-lg-8 col-12">
-                            <h2>General Info.</h2>
-
-                            <div class="accordion" id="accordionGeneral">
-                                <div class="accordion-item">
-                                    <h2 class="accordion-header" id="headingOne">
-                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accordionGeneralOne" aria-expanded="true" aria-controls="accordionGeneralOne">
-                                        What is this DoJodi?
-                                        </button>
-                                    </h2>
-
-                                    <div id="accordionGeneralOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionGeneral">
-
-                                        <div class="accordion-body">
-                                            <p class="large-paragraph"><strong>DoJodi</strong> is a groundbreaking software platform that transforms how teams conceptualize, manage, and complete their most ambitious projects. </p>
-
-                                            <p class="large-paragraph">Through an intuitive interface and intelligent automation, we streamline complex workflows into seamless experiences.</p>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="accordion-item">
-                                    <h2 class="accordion-header" id="headingTwo">
-                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accordionGeneralTwo" aria-expanded="false" aria-controls="accordionGeneralTwo">
-                                        What is DoJodi website?
-                                        </button>
-                                    </h2>
-
-                                    <div id="accordionGeneralTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionGeneral">
-
-                                        <div class="accordion-body">
-                                            <p class="large-paragraph"><a href="https://www.teamdojodi.com/free-templates" target="_blank">DoJodi</a>: The modern workplace demands innovative solutions to accelerate productivity and collaboration amidst an increasingly complex landscape. Our application empowers teams to spend less time wrestling with chaos and more time focusing on the work that truly matters.</p>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="accordion-item">
-                                    <h2 class="accordion-header" id="headingThree">
-                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accordionGeneralThree" aria-expanded="false" aria-controls="accordionGeneralThree">
-                                        How do I support your website?
-                                        </button>
-                                    </h2>
-
-                                    <div id="accordionGeneralThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionGeneral">
-
-                                        <div class="accordion-body">
-                                            <p class="large-paragraph">We're always energized by customer feedback, whether suggestions, bug reports, or general constructive input. You can also support us by leaving positive reviews, sharing our app within your networks, or even joining our world-class team!</p>
-                                        </div>
-                                    </div>
-                                </div>
-
-                            </div>
-
-                            <h2 class="mt-5">About <span>our products</span></h2>
-
-                            <div class="accordion" id="accordionProduct">
-                                <div class="accordion-item">
-                                    <h2 class="accordion-header" id="headingFour">
-                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accordionProductOne" aria-expanded="true" aria-controls="accordionProductOne">
-                                        What is Event planning?
-                                        </button>
-                                    </h2>
-
-                                    <div id="accordionProductOne" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionProduct">
-
-                                        <div class="accordion-body">
-                                            <p class="large-paragraph"><strong>Our application </strong>is thoughtfully designed for rapid onboarding. Most customers can get up and running in minutes using our intuitive drag-and-drop interface.</p>
-
-                                            <p class="large-paragraph"> We also provide thorough documentation, tutorials, and customer support for any needed assistance.</p>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="accordion-item">
-                                    <h2 class="accordion-header" id="headingFive">
-                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accordionProductTwo" aria-expanded="false" aria-controls="accordionProductTwo">
-                                        How do I use the product?
-                                        </button>
-                                    </h2>
-
-                                    <div id="accordionProductTwo" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#accordionProduct">
-
-                                        <div class="accordion-body">
-                                            <p class="large-paragraph">Our app boosts team productivity, precision, and accountability through automated workflows, real-time dashboards, and seamless collaboration functionality. It reduces overhead costs through efficient processes. And it cultivates employee engagement with a delightful user experience that people actually enjoy using daily.</p>
-                                        </div>
-                                    </div>
-                                </div>
-
-                            </div>
-
-                        </div>
-
+                <div class="accordion-item">
+                  <h3 class="accordion-header" id="generalThreeHeading">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#generalThree" aria-expanded="false" aria-controls="generalThree">
+                      Where are you based, and do you travel?
+                    </button>
+                  </h3>
+                  <div id="generalThree" class="accordion-collapse collapse" aria-labelledby="generalThreeHeading" data-bs-parent="#accordionGeneral">
+                    <div class="accordion-body">
+                      <p class="large-paragraph">Our studio is in Indiranagar, Bangalore, and we plan events across India. We also take on a small number of destination events each year — if your venue is further afield, just ask and we'll talk through travel and logistics.</p>
                     </div>
+                  </div>
                 </div>
-            </section>
+              </div>
 
-        </main>
+              <h2 class="mt-5">Planning &amp; booking</h2>
 
-        <footer class="site-footer">
-            <div class="container">
-                <div class="row">
-
-                    <div class="col-lg-3 col-10 me-auto mb-4">
-                        <h4 class="text-white mb-3"><a href="index.html">Do</a>Jodi</h4>
-                        <p class="copyright-text text-muted mt-lg-5 mb-4 mb-lg-0">Copyright © 2022 <strong>DoJodi</strong></p>
-                        <br>
-                        <p class="copyright-text">Designed by <a href="https://www.teamdojodi.com/" target="_blank">DoJodi</a></p>
+              <div class="accordion" id="accordionBooking">
+                <div class="accordion-item">
+                  <h3 class="accordion-header" id="bookingOneHeading">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#bookingOne" aria-expanded="false" aria-controls="bookingOne">
+                      How far in advance should we book?
+                    </button>
+                  </h3>
+                  <div id="bookingOne" class="accordion-collapse collapse" aria-labelledby="bookingOneHeading" data-bs-parent="#accordionBooking">
+                    <div class="accordion-body">
+                      <p class="large-paragraph">For weddings and larger events we recommend 9 to 12 months, mostly so you have the pick of venues and dates. Smaller celebrations often come together in 6 to 8 weeks. Short notice? Get in touch anyway — we keep some capacity for last-minute events.</p>
                     </div>
-
-                    <div class="col-lg-5 col-8">
-                        <h5 class="text-white mb-3">Sitemap</h5>
-
-                        <ul class="footer-menu d-flex flex-wrap">
-                            <li class="footer-menu-item"><a href="about.html" class="footer-menu-link">Story</a></li>
-
-                            <li class="footer-menu-item"><a href="#" class="footer-menu-link">Products</a></li>
-
-                            <li class="footer-menu-item"><a href="#" class="footer-menu-link">Privacy policy</a></li>
-
-                            <li class="footer-menu-item"><a href="#" class="footer-menu-link">FAQs</a></li>
-
-                            <li class="footer-menu-item"><a href="#" class="footer-menu-link">Contact</a></li>
-                        </ul>
-                    </div>
-
-                    <div class="col-lg-3 col-4">
-                        <h5 class="text-white mb-3">Social</h5>
-
-                        <ul class="social-icon">
-
-                            <li><a href="#" class="social-icon-link bi-youtube"></a></li>
-
-                            <li><a href="#" class="social-icon-link bi-whatsapp"></a></li>
-
-                            <li><a href="#" class="social-icon-link bi-instagram"></a></li>
-
-                            <li><a href="#" class="social-icon-link bi-skype"></a></li>
-                        </ul>
-                    </div>
-
+                  </div>
                 </div>
+
+                <div class="accordion-item">
+                  <h3 class="accordion-header" id="bookingTwoHeading">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#bookingTwo" aria-expanded="false" aria-controls="bookingTwo">
+                      How does pricing work?
+                    </button>
+                  </h3>
+                  <div id="bookingTwo" class="accordion-collapse collapse" aria-labelledby="bookingTwoHeading" data-bs-parent="#accordionBooking">
+                    <div class="accordion-body">
+                      <p class="large-paragraph">You can choose a signature package or build your own plan from individual services. After a short discovery call we send a clear, itemised proposal — no hidden fees. A deposit secures your date, with the balance split across agreed milestones.</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="accordion-item">
+                  <h3 class="accordion-header" id="bookingThreeHeading">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#bookingThree" aria-expanded="false" aria-controls="bookingThree">
+                      Can we book just one service, like catering or florals?
+                    </button>
+                  </h3>
+                  <div id="bookingThree" class="accordion-collapse collapse" aria-labelledby="bookingThreeHeading" data-bs-parent="#accordionBooking">
+                    <div class="accordion-body">
+                      <p class="large-paragraph">Absolutely. Plenty of clients already have a venue or a planner and just need a specific piece — catering, bar, floral and styling, dessert tables or guest gifting. Browse the <a href="products.html">services page</a> and add only what you need.</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="accordion-item">
+                  <h3 class="accordion-header" id="bookingFourHeading">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#bookingFour" aria-expanded="false" aria-controls="bookingFour">
+                      What happens after we first get in touch?
+                    </button>
+                  </h3>
+                  <div id="bookingFour" class="accordion-collapse collapse" aria-labelledby="bookingFourHeading" data-bs-parent="#accordionBooking">
+                    <div class="accordion-body">
+                      <p class="large-paragraph">Within two working days we'll set up a short discovery call to understand your vision, guest count and budget. From there you'll get a tailored proposal and a draft timeline. Once you're happy, a deposit confirms the booking and your planner gets to work.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="mt-5">
+                <p class="lead">Still have a question we haven't covered?</p>
+                <a href="contact.html" class="btn custom-btn">Talk to our team</a>
+              </div>
             </div>
-        </footer>
+          </div>
+        </div>
+      </section>
+    </main>
 
-        <!-- JAVASCRIPT FILES -->
-        <script src="js/jquery.min.js"></script>
-        <script src="js/bootstrap.bundle.min.js"></script>
-        <script src="js/Headroom.js"></script>
-        <script src="js/jQuery.headroom.js"></script>
-        <script src="js/slick.min.js"></script>
-        <script src="js/custom.js"></script>
+    <div data-include="footer"></div>
 
-    </body>
+    <script src="js/includes.js"></script>
+  </body>
 </html>
