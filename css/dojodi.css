@@ -437,15 +437,16 @@ textarea:focus-visible, .btn:focus-visible, .nav-link:focus-visible,
 .stat-label { font-size: 0.8rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--cream-muted); }
 
 /* --------------------------------------------------------- Home: tabs ---- */
-.about .nav-pills { gap: 4px; }
+.about .nav-pills { gap: 6px; flex-direction: row; flex-wrap: wrap; }
 .about .nav-pills .nav-link {
   font-family: var(--font-body);
-  color: var(--muted); font-size: 0.95rem; font-weight: var(--fw-semibold);
-  letter-spacing: 0.02em; text-transform: none;
-  border-left: 2px solid var(--line); border-radius: 0; padding: 6px 0 6px 16px; width: 100%;
+  color: var(--ink); font-size: 0.9rem; font-weight: 600;
+  letter-spacing: 0.03em; text-transform: none;
+  border: 1.5px solid var(--line); border-radius: 2rem; padding: 8px 20px; width: auto;
+  background: transparent; transition: background 0.2s, color 0.2s, border-color 0.2s;
 }
 .about .nav-pills .nav-link.active, .about .nav-pills .nav-link:hover {
-  background: transparent; color: var(--ink); border-left-color: var(--gold);
+  background: var(--ink); color: var(--cream); border-color: var(--ink);
 }
 .tab-pane img { border-radius: var(--radius-lg); }
 
